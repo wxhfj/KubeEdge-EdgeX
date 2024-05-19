@@ -1,0 +1,27 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: Device
+metadata:
+  name: camera001
+  labels:
+    description: 'This_device_is_running_with_rpos'
+    manufacturer: 'rasberrypi'
+    model: onvif
+spec:
+  deviceModelRef:
+    name: my-onvifcamera-model
+  nodeSelector:
+    nodeSelectorTerms:
+    - matchExpressions:
+      - key: ''
+        operator: In
+        values:
+        - raspberrypi-kubeedge1
+status:
+  twins:
+    - propertyName: SnapshotUri
+      reported:
+        metadata:
+          timestamp: '1550049403600'
+          type: string
+        value: '-1'
+

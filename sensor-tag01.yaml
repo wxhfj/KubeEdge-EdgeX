@@ -1,0 +1,59 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: Device
+metadata:
+  name: sensor-tag01
+  labels:
+    description: 'monitoring_the_temperature_via_the_ethernet'
+    manufacturer: 'Audon_Electronics'
+    model: modbus-tcp
+spec:
+  deviceModelRef:
+    name: sensor-tag-model
+  nodeSelector:
+    nodeSelectorTerms:
+    - matchExpressions:
+      - key: ''
+        operator: In
+        values:
+        - raspberrypi-kubeedge1
+status:
+  twins:
+    - propertyName: Temperature
+      reported:
+        metadata:
+          timestamp: '1550049403598'
+          type: string
+        value: '-1'
+    - propertyName: ThermostatL
+      reported:
+        metadata:
+          timestamp: '1550049403598'
+          type: string
+        value: '-1'
+      desired:
+        metadata:
+          timestamp: '1550049403598'
+          type: string
+        value: '-55'
+    - propertyName: ThermostatH
+      reported:
+        metadata:
+          timestamp: '1550049403598'
+          type: string
+        value: '-1'
+      desired:
+        metadata:
+          timestamp: '1550049403598'
+          type: string
+        value: '125'
+    - propertyName: AlarmMode
+      reported:
+        metadata:
+          timestamp: '1550049403598'
+          type: string
+        value: '-1'
+      desired:
+        metadata:
+          timestamp: '1550049403598'
+          type: string
+        value: '1'

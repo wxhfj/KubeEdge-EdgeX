@@ -1,0 +1,31 @@
+{
+    "apiVersion" : "v3",
+    "device": {
+       "name" :"Modbus-TCP-Temperature-Sensor",
+       "description":"This device is a product for monitoring the temperature via the ethernet",
+       "labels":[ 
+          "Temperature",
+          "Modbus TCP"
+       ],
+       "serviceName": "device-modbus",
+       "profileName": "Ethernet-Temperature-Sensor",
+       "protocols":{
+          "modbus-tcp":{
+             "Address" : "192.168.31.101",
+             "Port" : "502",
+             "UnitID" : "1",
+             "Timeout" : "5",
+             "IdleTimeout" : "5"
+          }
+       },
+       "autoEvents":[ 
+          { 
+             "Interval":"30s",
+             "onChange":false,
+             "SourceName":"Temperature"
+          }
+       ],
+       "adminState":"UNLOCKED",
+       "operatingState":"UP"
+    }
+}

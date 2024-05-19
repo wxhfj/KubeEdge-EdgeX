@@ -1,0 +1,48 @@
+name: "my-ds18b20-model"
+manufacturer: "iot"
+model: "MQTT-DEVICE"
+description: "Test device profile"
+labels:
+  - "mqtt"
+  - "test"
+deviceResources:
+  -
+    name: temperature
+    isHidden: true
+    description: "device temperature"
+    properties:
+      valueType: "Float32"
+      readWrite: "R"
+  -
+    name: ping
+    isHidden: true
+    description: "device awake"
+    properties:
+      valueType: "String"
+      readWrite: "R"
+  -
+    name: message
+    isHidden: false
+    description: "device message"
+    properties:
+      valueType: "String"
+      readWrite: "RW"
+  -
+    name: json
+    isHidden: false
+    description: "JSON message"
+    properties:
+      valueType: "Object"
+      readWrite: "RW"
+      mediaType: "application/json"
+
+deviceCommands:
+  -
+    name: values
+    readWrite: "R"
+    isHidden: false
+    resourceOperations:
+        - { deviceResource: "temperature" }
+        - { deviceResource: "ping" }
+        - { deviceResource: "message" }
+

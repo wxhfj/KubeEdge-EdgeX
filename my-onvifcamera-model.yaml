@@ -1,0 +1,15 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: DeviceModel
+metadata:
+  labels:
+    description: 'My_camera_with_csi_in_rasberrypi'
+    manufacturer: 'RasberryPi'
+  name: my-onvifcamera-model
+spec:
+  properties:
+  - name: SnapshotUri
+    description: snap with camera.
+    type:
+      string:
+        accessMode: ReadOnly
+        defaultValue: '-1'

@@ -1,0 +1,22 @@
+{
+    "apiVersion" : "v3",
+    "device": {
+       "name":"Camera001",
+       "serviceName": "device-onvif-camera",
+       "profileName": "onvif-camera",
+       "description": "My test camera",
+       "adminState": "UNLOCKED",
+       "operatingState": "UP",
+       "protocols": {
+          "Onvif": {
+             "Address": "192.168.31.101",
+             "Port": "8081",
+             "MACAddress": "aa:bb:cc:11:22:33",
+             "FriendlyName":"Default Camera"
+          },
+          "CustomMetadata": {
+             "Location":"raspi camera"
+          }
+       }
+    }
+ }

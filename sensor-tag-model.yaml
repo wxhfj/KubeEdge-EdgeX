@@ -1,0 +1,33 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: DeviceModel
+metadata:
+  labels:
+    description: 'Ethernet_Thermometer_measuring_from_-55_to_125'
+    manufacturer: 'Audon_Electronics'
+  name: sensor-tag-model
+spec:
+  properties:
+  - name: Temperature
+    description: temperature in degree celsius
+    type:
+      string:
+        accessMode: ReadOnly
+        defaultValue: '0'
+  - name: ThermostatL
+    description: Lower alarm threshold of the temperature
+    type:
+      string:
+        accessMode: ReadWrite
+        defaultValue: '-55.00'
+  - name: ThermostatH
+    description: Upper alarm threshold of the temperature
+    type:
+      string:
+        accessMode: ReadWrite
+        defaultValue: '125.00'
+  - name: AlarmMode
+    description: 1 - OFF (disabled), 2 - Lower, 3 - Higher, 4 - Lower or Higher
+    type:
+      string:
+        accessMode: ReadWrite
+        defaultValue: '1'

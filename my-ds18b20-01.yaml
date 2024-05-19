@@ -1,0 +1,59 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: Device
+metadata:
+  name: my-ds18b20-01
+  labels:
+    description: 'This_device_is_mocked_with_python'
+    manufacturer: 'python'
+    model: mqtt
+spec:
+  deviceModelRef:
+    name: my-ds18b20-model
+  protocol:
+    mqtt:
+      tcp:
+        port: 1883
+        address: '192.168.31.101'
+  nodeSelector:
+    nodeSelectorTerms:
+    - matchExpressions:
+      - key: ''
+        operator: In
+        values:
+        - raspberrypi-kubeedge1
+status:
+  twins:
+    - propertyName: temperature
+      reported:
+        metadata:
+          timestamp: '1550049403599'
+          type: string
+        value: '-1'
+    - propertyName: ping
+      reported:
+        metadata:
+          timestamp: '1550049403599'
+          type: string
+        value: '-1'
+    - propertyName: message
+      reported:
+        metadata:
+          timestamp: '1550049403599'
+          type: string
+        value: '-1'
+      desired:
+        metadata:
+          timestamp: '1550049403599'
+          type: string
+        value: 'test_message01'
+    - propertyName: json
+      reported:
+        metadata:
+          timestamp: '1550049403599'
+          type: string
+        value: '-1'
+      desired:
+        metadata:
+          timestamp: '1550049403599'
+          type: string
+        value: 'test_json01'

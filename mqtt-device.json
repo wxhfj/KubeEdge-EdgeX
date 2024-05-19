@@ -1,0 +1,32 @@
+{
+    "apiVersion" : "v3",
+    "device": {
+       "name" :"my-ds18b20-01",
+       "description":"This device is mocked with python",
+       "labels":[ 
+          "Temperature",
+          "MQTT"
+       ],
+       "serviceName": "device-mqtt",
+       "profileName": "my-ds18b20-model",
+       "protocols":{
+          "mqtt":{
+             "CommandTopic" : "command/my-ds18b20-01",
+             "Host" : "192.168.31.101",
+             "User" : "huaqiao",
+             "Password" : "1234",
+             "Port" : "1883",
+             "Schema" : "tcp"
+          }
+       },
+       "autoEvents":[ 
+          { 
+             "Interval":"3s",
+             "onChange":false,
+             "SourceName":"message"
+          }
+       ],
+       "adminState":"UNLOCKED",
+       "operatingState":"UP"
+    }
+}
